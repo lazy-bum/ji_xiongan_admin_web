@@ -20,6 +20,7 @@ export default defineConfig({
     'wh-full': 'w-full h-full',
     'flex-ac': 'flex justify-around items-center',
     'flex-bc': 'flex justify-between items-center',
+    'flex-cc': 'flex justify-center items-center',
   },
   theme: {},
 });
