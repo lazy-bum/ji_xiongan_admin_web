@@ -24,6 +24,18 @@ import * as toolsUpload from './toolsUpload';
 import * as health from './health';
 import * as netDiskManage from './netDiskManage';
 import * as netDiskOverview from './netDiskOverview';
+import * as dataCompletedAmount from './dataCompletedAmount';
+import * as dataMonitoring from './dataMonitoring';
+import * as dataDeviceCount from './dataDeviceCount';
+import * as dataDeviceManage from './dataDeviceManage';
+import * as dataYinProtection from './dataYinProtection';
+import * as dataRunAbnormal from './dataRunAbnormal';
+import * as dataStatistics from './dataStatistics';
+import * as dataPipelineManage from './dataPipelineManage';
+import * as dataFlowmeter from './dataFlowmeter';
+import * as dataPersonnelInspection from './dataPersonnelInspection';
+import * as dataPeopleDocument from './dataPeopleDocument';
+import * as dataCockpitYinProtection from './dataCockpitYinProtection';
 import * as businessTodo from './businessTodo';
 export default {
   auth,
@@ -48,5 +60,17 @@ export default {
   health,
   netDiskManage,
   netDiskOverview,
+  dataCompletedAmount,
+  dataMonitoring,
+  dataDeviceCount,
+  dataDeviceManage,
+  dataYinProtection,
+  dataRunAbnormal,
+  dataStatistics,
+  dataPipelineManage,
+  dataFlowmeter,
+  dataPersonnelInspection,
+  dataPeopleDocument,
+  dataCockpitYinProtection,
   businessTodo,
 };

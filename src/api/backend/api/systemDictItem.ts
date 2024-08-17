@@ -89,3 +89,18 @@ export async function dictItemDelete(
     ...(options || { successMsg: '删除成功' }),
   });
 }
+
+/** 根据code获取字典列表项 GET /api/system/dict-item/find-list-by-code */
+export async function dictItemFindListByCode(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.DictItemFindListByCodeParams,
+  options?: RequestOptions,
+) {
+  return request<API.DictItemEntity[]>('/api/system/dict-item/find-list-by-code', {
+    method: 'GET',
+    params: {
+      ...params,
+    },
+    ...(options || {}),
+  });
+}

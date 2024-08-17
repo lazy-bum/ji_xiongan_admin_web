@@ -67,10 +67,107 @@ declare namespace API {
     updatedAt: string;
   };
 
+  type CockpitYinProtectionDeleteParams = {
+    id: number;
+  };
+
+  type CockpitYinProtectionDto = {
+    /** 名称 */
+    name?: string;
+    /** 状态 */
+    state?: string;
+    /** 备注 */
+    notes?: string;
+    /** 排序 */
+    orderNo: number;
+    id?: number;
+    createdAt?: string;
+    updatedAt?: string;
+  };
+
+  type CockpitYinProtectionEntity = {
+    /** 名称 */
+    name: string;
+    /** 状态 */
+    state: string;
+    /** 备注 */
+    notes: string;
+    orderNo: number;
+    id: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+
+  type CockpitYinProtectionListParams = {
+    page?: number;
+    pageSize?: number;
+    field?: string;
+    order?: 'ASC' | 'DESC';
+    _t?: number;
+  };
+
+  type CockpitYinProtectionUpdateParams = {
+    id: number;
+  };
+
   type CommonEntity = {
     id: number;
     createdAt: string;
     updatedAt: string;
+  };
+
+  type CompletedAmountDeleteParams = {
+    id: number;
+  };
+
+  type CompletedAmountDto = {
+    /** 场站名称 */
+    name?: string;
+    /** 余额(万元) */
+    balance?: number;
+    /** 月代输量(万方) */
+    monthInput?: number;
+    /** 年代输量(万方) */
+    yearInput?: number;
+    /** 月代用气量(万方) */
+    monthUsed?: number;
+    /** 年代用气量(万方) */
+    yearUsed?: number;
+    id?: number;
+    createdAt?: string;
+    updatedAt?: string;
+  };
+
+  type CompletedAmountEntity = {
+    /** 名称 */
+    name: string;
+    /** 余额(万元) */
+    balance: number;
+    /** 月代输量(万方) */
+    monthInput: number;
+    /** 年代输量(万方) */
+    yearInput: number;
+    /** 月代用气量(万方) */
+    monthUsed: number;
+    /** 年代用气量(万方) */
+    yearUsed: number;
+    id: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+
+  type CompletedAmountListParams = {
+    page?: number;
+    pageSize?: number;
+    field?: string;
+    order?: 'ASC' | 'DESC';
+    /** 场站名称 */
+    name?: string;
+    _t?: number;
+  };
+
+  type CompletedAmountUpdateParams = {
+    id: number;
   };
 
   type CoreLoad = {
@@ -148,6 +245,98 @@ declare namespace API {
     id: number;
   };
 
+  type DeviceCountDeleteParams = {
+    id: number;
+  };
+
+  type DeviceCountDto = {
+    /** 场站 */
+    station?: string;
+    /** 在修设备 */
+    generalDevice?: number;
+    /** 报修设备 */
+    mainDevice?: number;
+    /** 正常设备 */
+    keyDevice?: number;
+    id?: number;
+    createdAt?: string;
+    updatedAt?: string;
+  };
+
+  type DeviceCountEntity = {
+    /** 场站名称 */
+    station: string;
+    /** 一般设备 */
+    generalDevice: number;
+    /** 主要设备 */
+    mainDevice: number;
+    /** 关键设备 */
+    keyDevice: number;
+    id: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+
+  type DeviceCountListParams = {
+    page?: number;
+    pageSize?: number;
+    field?: string;
+    order?: 'ASC' | 'DESC';
+    /** 场站 */
+    station?: string;
+    _t?: number;
+  };
+
+  type DeviceCountUpdateParams = {
+    id: number;
+  };
+
+  type DeviceManageDeleteParams = {
+    id: number;
+  };
+
+  type DeviceManageDto = {
+    /** 场站 */
+    station?: string;
+    /** 在修设备 */
+    maintenance?: number;
+    /** 报修设备 */
+    repair?: number;
+    /** 正常设备 */
+    normal?: number;
+    id?: number;
+    createdAt?: string;
+    updatedAt?: string;
+  };
+
+  type DeviceManageEntity = {
+    /** 场站名称 */
+    station: string;
+    /** 在修设备 */
+    maintenance: number;
+    /** 报修设备 */
+    repair: number;
+    /** 正常设备 */
+    normal: number;
+    id: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+
+  type DeviceManageListParams = {
+    page?: number;
+    pageSize?: number;
+    field?: string;
+    order?: 'ASC' | 'DESC';
+    /** 场站 */
+    station?: string;
+    _t?: number;
+  };
+
+  type DeviceManageUpdateParams = {
+    id: number;
+  };
+
   type DictItemDeleteParams = {
     id: number;
   };
@@ -192,6 +381,11 @@ declare namespace API {
     id: number;
     createdAt: string;
     updatedAt: string;
+  };
+
+  type DictItemFindListByCodeParams = {
+    /** 字典类型 */
+    code: string;
   };
 
   type DictItemInfoParams = {
@@ -320,6 +514,50 @@ declare namespace API {
     times: number[];
     /** 对应天数的耗费流量 */
     datas: number[];
+  };
+
+  type FlowmeterDeleteParams = {
+    id: number;
+  };
+
+  type FlowmeterDto = {
+    /** 进站流量 */
+    enteringFlowContrast?: number;
+    /** 出站流量 */
+    outboundFlowContrast?: number;
+    /** 年进站流量 */
+    yearEnteringFlowContrast?: number;
+    /** 年出站流量 */
+    yearOutboundFlowContrast?: number;
+    id?: number;
+    createdAt?: string;
+    updatedAt?: string;
+  };
+
+  type FlowmeterEntity = {
+    /** 进站流量 */
+    enteringFlowContrast: number;
+    /** 出站流量 */
+    outboundFlowContrast: number;
+    /** 年进站流量 */
+    yearEnteringFlowContrast: number;
+    /** 年出站流量 */
+    yearOutboundFlowContrast: number;
+    id: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+
+  type FlowmeterListParams = {
+    page?: number;
+    pageSize?: number;
+    field?: string;
+    order?: 'ASC' | 'DESC';
+    _t?: number;
+  };
+
+  type FlowmeterUpdateParams = {
+    id: number;
   };
 
   type ImageCaptcha = {
@@ -584,6 +822,48 @@ declare namespace API {
     path: string;
   };
 
+  type MonitoringDeleteParams = {
+    id: number;
+  };
+
+  type MonitoringDto = {
+    /** 名称 */
+    name?: string;
+    /** 数量 */
+    count?: number;
+    /** 百分比 */
+    monthInput?: number;
+    id?: number;
+    createdAt?: string;
+    updatedAt?: string;
+  };
+
+  type MonitoringEntity = {
+    /** 名称 */
+    name: string;
+    /** 数量 */
+    count: number;
+    /** 百分比 */
+    monthInput: number;
+    id: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+
+  type MonitoringListParams = {
+    page?: number;
+    pageSize?: number;
+    field?: string;
+    order?: 'ASC' | 'DESC';
+    /** 名称 */
+    name?: string;
+    _t?: number;
+  };
+
+  type MonitoringUpdateParams = {
+    id: number;
+  };
+
   type NetDiskManageDownloadParams = {
     /** 文件名 */
     name: string;
@@ -701,6 +981,136 @@ declare namespace API {
     oldPassword: string;
     /** 新密码 */
     newPassword: string;
+  };
+
+  type PeopleDocumentDeleteParams = {
+    id: number;
+  };
+
+  type PeopleDocumentDto = {
+    /** 证件类型 */
+    cardType?: string;
+    /** 正常证件数 */
+    normal?: number;
+    /** 预警证件数 */
+    warn?: number;
+    /** 预警证件数 */
+    expire?: number;
+    id?: number;
+    createdAt?: string;
+    updatedAt?: string;
+    orderNo?: number;
+  };
+
+  type PeopleDocumentEntity = {
+    /** 证件类型 */
+    cardType: string;
+    /** 正常证件数 */
+    normal: number;
+    /** 预警证件数 */
+    warn: number;
+    /** 预警证件数 */
+    expire: number;
+    orderNo: number;
+    id: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+
+  type PeopleDocumentListParams = {
+    page?: number;
+    pageSize?: number;
+    field?: string;
+    order?: 'ASC' | 'DESC';
+    _t?: number;
+  };
+
+  type PeopleDocumentUpdateParams = {
+    id: number;
+  };
+
+  type PersonnelInspectionDeleteParams = {
+    id: number;
+  };
+
+  type PersonnelInspectionDto = {
+    /** 人员类型 */
+    personType?: string;
+    /** 巡检完成量 */
+    inspectionComplete?: number;
+    id?: number;
+    createdAt?: string;
+    updatedAt?: string;
+  };
+
+  type PersonnelInspectionEntity = {
+    /** 人员类型 */
+    personType: string;
+    /** 巡检完成量 */
+    inspectionComplete: number;
+    id: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+
+  type PersonnelInspectionListParams = {
+    page?: number;
+    pageSize?: number;
+    field?: string;
+    order?: 'ASC' | 'DESC';
+    _t?: number;
+  };
+
+  type PersonnelInspectionUpdateParams = {
+    id: number;
+  };
+
+  type PipelineManageDeleteParams = {
+    id: number;
+  };
+
+  type PipelineManageDto = {
+    /** 第三方施工数量 */
+    dsfsg?: number;
+    /** 监护中数量 */
+    jhz?: number;
+    /** 施工关闭数量 */
+    sggb?: number;
+    /** 已完成风险评价 */
+    ywcfxpj?: number;
+    /** 待风险评价 */
+    dfxpj?: number;
+    id?: number;
+    createdAt?: string;
+    updatedAt?: string;
+  };
+
+  type PipelineManageEntity = {
+    /** 第三方施工数量 */
+    dsfsg: number;
+    /** 监护中数量 */
+    jhz: number;
+    /** 施工关闭数量 */
+    sggb: number;
+    /** 已完成风险评价 */
+    ywcfxpj: number;
+    /** 待风险评价 */
+    dfxpj: number;
+    id: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+
+  type PipelineManageListParams = {
+    page?: number;
+    pageSize?: number;
+    field?: string;
+    order?: 'ASC' | 'DESC';
+    _t?: number;
+  };
+
+  type PipelineManageUpdateParams = {
+    id: number;
   };
 
   type RefreshTokenEntity = {
@@ -834,6 +1244,58 @@ declare namespace API {
     id: number;
   };
 
+  type RunAbnormalDeleteParams = {
+    id: number;
+  };
+
+  type RunAbnormalDto = {
+    /** 场站 */
+    station?: string;
+    /** 报警地点 */
+    address?: string;
+    /** 报警时间 */
+    date?: string;
+    /** 状态 */
+    state?: string;
+    /** 状态颜色 */
+    stateColor?: string;
+    id?: number;
+    createdAt?: string;
+    updatedAt?: string;
+    orderNo?: number;
+  };
+
+  type RunAbnormalEntity = {
+    /** 场站 */
+    station: string;
+    /** 报警地点 */
+    address: string;
+    /** 报警时间 */
+    date: string;
+    /** 状态 */
+    state: string;
+    /** 状态颜色 */
+    stateColor: string;
+    orderNo: number;
+    id: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+
+  type RunAbnormalListParams = {
+    page?: number;
+    pageSize?: number;
+    field?: string;
+    order?: 'ASC' | 'DESC';
+    /** 场站 */
+    station?: string;
+    _t?: number;
+  };
+
+  type RunAbnormalUpdateParams = {
+    id: number;
+  };
+
   type Runtime = {
     /** 系统 */
     os: string;
@@ -913,6 +1375,64 @@ declare namespace API {
 
   type SseSseParams = {
     uid: number;
+  };
+
+  type StatisticsDeleteParams = {
+    id: number;
+  };
+
+  type StatisticsDto = {
+    /** 场站 */
+    station?: string;
+    /** 安全运行时常 */
+    runTime?: number;
+    /** 总能耗 */
+    energyConsumption?: number;
+    /** 年购气量 */
+    yearPurchaseGasTotal?: number;
+    /** 年耗气量 */
+    yearConsumeGasTotal?: number;
+    /** 年销气量 */
+    yearSaleGasTotal?: number;
+    /** 期末库存量 */
+    inventory?: number;
+    id?: number;
+    createdAt?: string;
+    updatedAt?: string;
+  };
+
+  type StatisticsEntity = {
+    /** 场站 */
+    station: string;
+    /** 安全运行时常 */
+    runTime: number;
+    /** 总能耗 */
+    energyConsumption: number;
+    /** 年购气量 */
+    yearPurchaseGasTotal: number;
+    /** 年耗气量 */
+    yearConsumeGasTotal: number;
+    /** 年销气量 */
+    yearSaleGasTotal: number;
+    /** 期末库存量 */
+    inventory: number;
+    id: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+
+  type StatisticsListParams = {
+    page?: number;
+    pageSize?: number;
+    field?: string;
+    order?: 'ASC' | 'DESC';
+    /** 场站 */
+    station?: string;
+    _t?: number;
+  };
+
+  type StatisticsUpdateParams = {
+    id: number;
   };
 
   type StorageDeleteDto = {
@@ -1279,6 +1799,55 @@ declare namespace API {
   };
 
   type UserUpdateParams = {
+    id: number;
+  };
+
+  type YinProtectionDeleteParams = {
+    id: number;
+  };
+
+  type YinProtectionDto = {
+    /** 场站 */
+    station?: string;
+    /** 名称 */
+    name?: string;
+    /** 购气量 */
+    buyGas?: number;
+    /** 销气量 */
+    meltGas?: number;
+    /** 排序 */
+    orderNo: number;
+    id?: number;
+    createdAt?: string;
+    updatedAt?: string;
+  };
+
+  type YinProtectionEntity = {
+    /** 场站名称 */
+    station: string;
+    /** 名称 */
+    name: string;
+    /** 购气量 */
+    buyGas: number;
+    /** 销气量 */
+    meltGas: number;
+    orderNo: number;
+    id: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+
+  type YinProtectionListParams = {
+    page?: number;
+    pageSize?: number;
+    field?: string;
+    order?: 'ASC' | 'DESC';
+    /** 场站 */
+    station?: string;
+    _t?: number;
+  };
+
+  type YinProtectionUpdateParams = {
     id: number;
   };
 }
