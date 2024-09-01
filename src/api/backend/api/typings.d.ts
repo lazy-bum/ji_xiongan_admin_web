@@ -121,36 +121,27 @@ declare namespace API {
   };
 
   type CompletedAmountDto = {
-    /** 场站名称 */
+    /** 月份 */
     name?: string;
-    /** 余额(万元) */
-    balance?: number;
-    /** 月代输量(万方) */
-    monthInput?: number;
-    /** 年代输量(万方) */
-    yearInput?: number;
-    /** 月代用气量(万方) */
-    monthUsed?: number;
-    /** 年代用气量(万方) */
-    yearUsed?: number;
+    /** 计划量 */
+    plan?: number;
+    /** 完成量 */
+    complete?: number;
+    /** 排序 */
+    orderNo: number;
     id?: number;
     createdAt?: string;
     updatedAt?: string;
   };
 
   type CompletedAmountEntity = {
-    /** 名称 */
+    /** 月份 */
     name: string;
-    /** 余额(万元) */
-    balance: number;
-    /** 月代输量(万方) */
-    monthInput: number;
-    /** 年代输量(万方) */
-    yearInput: number;
-    /** 月代用气量(万方) */
-    monthUsed: number;
-    /** 年代用气量(万方) */
-    yearUsed: number;
+    /** 计划量 */
+    plan: number;
+    /** 完成量 */
+    complete: number;
+    orderNo: number;
     id: number;
     createdAt: string;
     updatedAt: string;
@@ -161,8 +152,6 @@ declare namespace API {
     pageSize?: number;
     field?: string;
     order?: 'ASC' | 'DESC';
-    /** 场站名称 */
-    name?: string;
     _t?: number;
   };
 
