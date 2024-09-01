@@ -3,7 +3,9 @@
     <div>
       <h1>404</h1>
       <h1>OOPS！你好像走丢了...</h1>
-      <RouterLink :to="{ path: '/', replace: true }" class="ant-btn ant-btn-primary"
+      <RouterLink
+        :to="{ path: '/dashboard/welcome', replace: true }"
+        class="ant-btn ant-btn-primary"
         >回到首页</RouterLink
       >
     </div>
