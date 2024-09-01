@@ -1102,6 +1102,49 @@ declare namespace API {
     id: number;
   };
 
+  type PipelineRunAbnormalDeleteParams = {
+    id: number;
+  };
+
+  type PipelineRunAbnormalDto = {
+    /** 报警地点 */
+    address?: string;
+    /** 报警时间 */
+    date?: string;
+    /** 状态 */
+    state?: string;
+    /** 排序 */
+    orderNo: number;
+    id?: number;
+    createdAt?: string;
+    updatedAt?: string;
+  };
+
+  type PipelineRunAbnormalEntity = {
+    /** 报警地点 */
+    address: string;
+    /** 报警时间 */
+    date: string;
+    /** 状态 */
+    state: string;
+    orderNo: number;
+    id: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+
+  type PipelineRunAbnormalListParams = {
+    page?: number;
+    pageSize?: number;
+    field?: string;
+    order?: 'ASC' | 'DESC';
+    _t?: number;
+  };
+
+  type PipelineRunAbnormalUpdateParams = {
+    id: number;
+  };
+
   type RefreshTokenEntity = {
     id: string;
     value: string;
@@ -1128,6 +1171,60 @@ declare namespace API {
     name: string;
     /** 路径 */
     path: string;
+  };
+
+  type ResidueDeleteParams = {
+    id: number;
+  };
+
+  type ResidueDto = {
+    /** 名称 */
+    name?: string;
+    /** 余额(万元) */
+    balance?: number;
+    /** 月代输量(万方) */
+    monthInput?: number;
+    /** 年代输量(万方) */
+    yearInput?: number;
+    /** 月代用气量(万方) */
+    monthUsed?: number;
+    /** 年代用气量(万方) */
+    yearUsed?: number;
+    id?: number;
+    createdAt?: string;
+    updatedAt?: string;
+  };
+
+  type ResidueEntity = {
+    /** 名称 */
+    name: string;
+    /** 余额(万元) */
+    balance: number;
+    /** 月代输量(万方) */
+    monthInput: number;
+    /** 年代输量(万方) */
+    yearInput: number;
+    /** 月代用气量(万方) */
+    monthUsed: number;
+    /** 年代用气量(万方) */
+    yearUsed: number;
+    id: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+
+  type ResidueListParams = {
+    page?: number;
+    pageSize?: number;
+    field?: string;
+    order?: 'ASC' | 'DESC';
+    /** 场站名称 */
+    name?: string;
+    _t?: number;
+  };
+
+  type ResidueUpdateParams = {
+    id: number;
   };
 
   type ResOp = {
@@ -1233,6 +1330,16 @@ declare namespace API {
     id: number;
   };
 
+  type RunAbnormalAllListParams = {
+    page?: number;
+    pageSize?: number;
+    field?: string;
+    order?: 'ASC' | 'DESC';
+    /** 场站 */
+    station?: string;
+    _t?: number;
+  };
+
   type RunAbnormalDeleteParams = {
     id: number;
   };
@@ -1246,12 +1353,11 @@ declare namespace API {
     date?: string;
     /** 状态 */
     state?: string;
-    /** 状态颜色 */
-    stateColor?: string;
+    /** 排序 */
+    orderNo: number;
     id?: number;
     createdAt?: string;
     updatedAt?: string;
-    orderNo?: number;
   };
 
   type RunAbnormalEntity = {
@@ -1263,8 +1369,6 @@ declare namespace API {
     date: string;
     /** 状态 */
     state: string;
-    /** 状态颜色 */
-    stateColor: string;
     orderNo: number;
     id: number;
     createdAt: string;
@@ -1364,6 +1468,49 @@ declare namespace API {
 
   type SseSseParams = {
     uid: number;
+  };
+
+  type StationRunAbnormalDeleteParams = {
+    id: number;
+  };
+
+  type StationRunAbnormalDto = {
+    /** 报警地点 */
+    address?: string;
+    /** 类型 */
+    type?: string;
+    /** 状态 */
+    state?: string;
+    /** 排序 */
+    orderNo: number;
+    id?: number;
+    createdAt?: string;
+    updatedAt?: string;
+  };
+
+  type StationRunAbnormalEntity = {
+    /** 报警地点 */
+    address: string;
+    /** 报警类型 */
+    type: string;
+    /** 状态 */
+    state: string;
+    orderNo: number;
+    id: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+
+  type StationRunAbnormalListParams = {
+    page?: number;
+    pageSize?: number;
+    field?: string;
+    order?: 'ASC' | 'DESC';
+    _t?: number;
+  };
+
+  type StationRunAbnormalUpdateParams = {
+    id: number;
   };
 
   type StatisticsDeleteParams = {

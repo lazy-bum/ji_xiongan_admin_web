@@ -126,6 +126,18 @@ const permissions = [
   'data:cockpit-yin-protection:create',
   'data:cockpit-yin-protection:delete',
   'data:cockpit-yin-protection:update',
+  'data:residue:list',
+  'data:residue:create',
+  'data:residue:delete',
+  'data:residue:update',
+  'data:pipeline-run-abnormal:list',
+  'data:pipeline-run-abnormal:create',
+  'data:pipeline-run-abnormal:delete',
+  'data:pipeline-run-abnormal:update',
+  'data:station-run-abnormal:list',
+  'data:station-run-abnormal:create',
+  'data:station-run-abnormal:delete',
+  'data:station-run-abnormal:update',
 ] as const;
 
 export type PermissionType = (typeof permissions)[number];

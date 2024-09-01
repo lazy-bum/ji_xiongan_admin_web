@@ -7,15 +7,15 @@
 
 import { request, type RequestOptions } from '@/utils/request';
 
-/** 更新 PUT /api/data/run-abnormal/${param0} */
-export async function runAbnormalUpdate(
+/** 更新 PUT /api/data/residue/${param0} */
+export async function residueUpdate(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.RunAbnormalUpdateParams,
-  body: API.RunAbnormalDto,
+  params: API.ResidueUpdateParams,
+  body: API.ResidueDto,
   options?: RequestOptions,
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<any>(`/api/data/run-abnormal/${param0}`, {
+  return request<any>(`/api/data/residue/${param0}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -26,38 +26,23 @@ export async function runAbnormalUpdate(
   });
 }
 
-/** 删除 DELETE /api/data/run-abnormal/${param0} */
-export async function runAbnormalDelete(
+/** 删除 DELETE /api/data/residue/${param0} */
+export async function residueDelete(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.RunAbnormalDeleteParams,
+  params: API.ResidueDeleteParams,
   options?: RequestOptions,
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<any>(`/api/data/run-abnormal/${param0}`, {
+  return request<any>(`/api/data/residue/${param0}`, {
     method: 'DELETE',
     params: { ...queryParams },
     ...(options || { successMsg: '删除成功' }),
   });
 }
 
-/** 全部列表 GET /api/data/run-abnormal/all-list */
-export async function runAbnormalAllList(
-  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.RunAbnormalAllListParams,
-  options?: RequestOptions,
-) {
-  return request<API.RunAbnormalEntity[]>('/api/data/run-abnormal/all-list', {
-    method: 'GET',
-    params: {
-      ...params,
-    },
-    ...(options || {}),
-  });
-}
-
-/** 创建 POST /api/data/run-abnormal/create */
-export async function runAbnormalCreate(body: API.RunAbnormalDto, options?: RequestOptions) {
-  return request<any>('/api/data/run-abnormal/create', {
+/** 创建 POST /api/data/residue/create */
+export async function residueCreate(body: API.ResidueDto, options?: RequestOptions) {
+  return request<any>('/api/data/residue/create', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -67,13 +52,13 @@ export async function runAbnormalCreate(body: API.RunAbnormalDto, options?: Requ
   });
 }
 
-/** 列表 GET /api/data/run-abnormal/list */
-export async function runAbnormalList(
+/** 获取完成量列表 GET /api/data/residue/list */
+export async function residueList(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.RunAbnormalListParams,
+  params: API.ResidueListParams,
   options?: RequestOptions,
 ) {
-  return request<API.RunAbnormalEntity[]>('/api/data/run-abnormal/list', {
+  return request<API.ResidueEntity[]>('/api/data/residue/list', {
     method: 'GET',
     params: {
       ...params,

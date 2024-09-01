@@ -1,25 +1,23 @@
 <template>
   <DynamicTable
     row-key="id"
-    header-title="运行异常"
-    :data-request="Api.dataRunAbnormal.runAbnormalList"
+    header-title="场站运行异常"
+    :search-form="{ schemas: searchFormSchemas }"
+    :data-request="Api.dataStationRunAbnormal.stationRunAbnormalList"
     :columns="columns"
     bordered
     size="small"
     show-index
   >
     <template #bodyCell="{ column, record }">
-      <template v-if="column.dataIndex === 'station'">
-        {{ deviceTypeList.find((n) => n.value === record[column.dataIndex])?.label }}
-      </template>
-      <template v-else-if="column.dataIndex === 'state'">
+      <template v-if="column.dataIndex === 'state'">
         {{ stateTypeList.find((n) => n.value === record[column.dataIndex])?.label }}
       </template>
     </template>
     <template #toolbar>
       <a-button
         type="primary"
-        :disabled="!$auth('data:run-abnormal:create')"
+        :disabled="!$auth('data:station-run-abnormal:create')"
         @click="openMenuModal({})"
       >
         新增
@@ -42,10 +40,9 @@
   import Api from '@/api/';
 
   defineOptions({
-    name: 'dataRunAbnormal',
+    name: 'dataStationRunAbnormal',
   });
 
-  const deviceTypeList = ref<LabelValueOptions>([]);
   const stateTypeList = ref<LabelValueOptions>([]);
 
   const [DynamicTable, dynamicTableInstance] = useTable({
@@ -55,19 +52,11 @@
   });
 
   onBeforeMount(async () => {
-    const data = await Api.systemDictItem.dictItemFindListByCode({ code: 'data_station' });
     const stateData = await Api.systemDictItem.dictItemFindListByCode({ code: 'run_abnormal' });
-    deviceTypeList.value = data.map((n) => ({ label: n.label, value: n.value }));
     stateTypeList.value = stateData.map((n) => ({ label: n.label, value: n.value }));
 
     // 动态更新搜索表单项
     dynamicTableInstance?.getSearchFormRef()?.updateSchema?.([
-      {
-        field: 'station',
-        componentProps: {
-          options: deviceTypeList.value,
-        },
-      },
       {
         field: 'state',
         componentProps: {
@@ -91,9 +80,9 @@
           record.id && (values.roleId = record.id);
           const params = { ...values };
           if (record.id) {
-            await Api.dataRunAbnormal.runAbnormalUpdate({ id: record.id }, params);
+            await Api.dataStationRunAbnormal.stationRunAbnormalUpdate({ id: record.id }, params);
           } else {
-            await Api.dataRunAbnormal.runAbnormalCreate(params);
+            await Api.dataStationRunAbnormal.stationRunAbnormalCreate(params);
           }
           dynamicTableInstance?.reload();
         },
@@ -105,12 +94,6 @@
     });
 
     formRef?.updateSchema?.([
-      {
-        field: 'station',
-        componentProps: {
-          options: deviceTypeList.value,
-        },
-      },
       {
         field: 'state',
         componentProps: {
@@ -126,7 +109,7 @@
     }
   };
   const delRowConfirm = async (record: TableListItem) => {
-    await Api.dataRunAbnormal.runAbnormalDelete({ id: record.id });
+    await Api.dataStationRunAbnormal.stationRunAbnormalDelete({ id: record.id });
     dynamicTableInstance?.reload();
   };
 
@@ -142,7 +125,7 @@
         {
           label: '编辑',
           auth: {
-            perm: 'data:run-abnormal:update',
+            perm: 'data:station-run-abnormal:update',
             effect: 'disable',
           },
           onClick: () => {
@@ -151,7 +134,7 @@
         },
         {
           label: '删除',
-          auth: 'data:run-abnormal:delete',
+          auth: 'data:station-run-abnormal:delete',
           popConfirm: {
             title: '你确定要删除吗？',
             placement: 'left',

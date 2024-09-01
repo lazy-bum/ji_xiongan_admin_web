@@ -1,12 +1,6 @@
 import type { FormSchema } from '@/components/core/schema-form';
 
-export const roleSchemas: FormSchema<API.RunAbnormalDto>[] = [
-  {
-    field: 'station',
-    component: 'Select',
-    label: '场站名称',
-    rules: [{ required: true, type: 'string' }],
-  },
+export const roleSchemas: FormSchema<API.StationRunAbnormalDto>[] = [
   {
     field: 'address',
     component: 'Input',
@@ -14,15 +8,10 @@ export const roleSchemas: FormSchema<API.RunAbnormalDto>[] = [
     rules: [{ type: 'string' }],
   },
   {
-    field: 'date',
-    component: 'DatePicker',
-    label: '报警时间',
-    componentProps: {
-      showTime: true,
-      style: {
-        width: '100%',
-      },
-    },
+    field: 'type',
+    component: 'Input',
+    label: '报警类型',
+    rules: [{ type: 'string' }],
   },
   {
     field: 'state',

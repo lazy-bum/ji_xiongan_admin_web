@@ -1,12 +1,6 @@
 import type { FormSchema } from '@/components/core/schema-form';
 
-export const roleSchemas: FormSchema<API.RunAbnormalDto>[] = [
-  {
-    field: 'station',
-    component: 'Select',
-    label: '场站名称',
-    rules: [{ required: true, type: 'string' }],
-  },
+export const roleSchemas: FormSchema<API.PipelineRunAbnormalDto>[] = [
   {
     field: 'address',
     component: 'Input',
