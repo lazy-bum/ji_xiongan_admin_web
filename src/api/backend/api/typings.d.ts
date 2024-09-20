@@ -80,9 +80,9 @@ declare namespace API {
     notes?: string;
     /** 排序 */
     orderNo: number;
-    id?: number;
     createdAt?: string;
     updatedAt?: string;
+    id?: number;
   };
 
   type CockpitYinProtectionEntity = {
@@ -129,9 +129,9 @@ declare namespace API {
     complete?: number;
     /** 排序 */
     orderNo: number;
-    id?: number;
     createdAt?: string;
     updatedAt?: string;
+    id?: number;
   };
 
   type CompletedAmountEntity = {
@@ -247,9 +247,9 @@ declare namespace API {
     mainDevice?: number;
     /** 正常设备 */
     keyDevice?: number;
-    id?: number;
     createdAt?: string;
     updatedAt?: string;
+    id?: number;
   };
 
   type DeviceCountEntity = {
@@ -293,9 +293,9 @@ declare namespace API {
     repair?: number;
     /** 正常设备 */
     normal?: number;
-    id?: number;
     createdAt?: string;
     updatedAt?: string;
+    id?: number;
   };
 
   type DeviceManageEntity = {
@@ -345,9 +345,9 @@ declare namespace API {
     remark?: string;
     /** 字典类型 ID */
     typeId: number;
-    id?: number;
     createdAt?: string;
     updatedAt?: string;
+    id?: number;
     type?: DictTypeEntity;
     orderNo?: number;
   };
@@ -416,9 +416,9 @@ declare namespace API {
     status?: number;
     /** 备注 */
     remark?: string;
-    id?: number;
     createdAt?: string;
     updatedAt?: string;
+    id?: number;
   };
 
   type DictTypeEntity = {
@@ -518,9 +518,9 @@ declare namespace API {
     yearEnteringFlowContrast?: number;
     /** 年出站流量 */
     yearOutboundFlowContrast?: number;
-    id?: number;
     createdAt?: string;
     updatedAt?: string;
+    id?: number;
   };
 
   type FlowmeterEntity = {
@@ -822,9 +822,9 @@ declare namespace API {
     count?: number;
     /** 百分比 */
     monthInput?: number;
-    id?: number;
     createdAt?: string;
     updatedAt?: string;
+    id?: number;
   };
 
   type MonitoringEntity = {
@@ -985,9 +985,9 @@ declare namespace API {
     warn?: number;
     /** 预警证件数 */
     expire?: number;
-    id?: number;
     createdAt?: string;
     updatedAt?: string;
+    id?: number;
     orderNo?: number;
   };
 
@@ -1027,9 +1027,9 @@ declare namespace API {
     personType?: string;
     /** 巡检完成量 */
     inspectionComplete?: number;
-    id?: number;
     createdAt?: string;
     updatedAt?: string;
+    id?: number;
   };
 
   type PersonnelInspectionEntity = {
@@ -1069,9 +1069,9 @@ declare namespace API {
     ywcfxpj?: number;
     /** 待风险评价 */
     dfxpj?: number;
-    id?: number;
     createdAt?: string;
     updatedAt?: string;
+    id?: number;
   };
 
   type PipelineManageEntity = {
@@ -1115,9 +1115,9 @@ declare namespace API {
     state?: string;
     /** 排序 */
     orderNo: number;
-    id?: number;
     createdAt?: string;
     updatedAt?: string;
+    id?: number;
   };
 
   type PipelineRunAbnormalEntity = {
@@ -1142,6 +1142,59 @@ declare namespace API {
   };
 
   type PipelineRunAbnormalUpdateParams = {
+    id: number;
+  };
+
+  type RealTimeDeviceDataDeleteParams = {
+    id: number;
+  };
+
+  type RealTimeDeviceDataDto = {
+    /** code */
+    code?: string;
+    /** data */
+    data?: string;
+    /** 发送数据 */
+    send?: string;
+    /** 接收数据 */
+    receive?: string;
+    createdAt?: string;
+    updatedAt?: string;
+    id?: string;
+  };
+
+  type RealTimeDeviceDataEntity = {
+    /** code */
+    code: string;
+    /** data */
+    data: string;
+    /** 发送的数据 */
+    send: string;
+    /** 接收的数据 */
+    receive: string;
+    id: string;
+    createdAt: string;
+    updatedAt: string;
+  };
+
+  type RealTimeDeviceDataGet6HoursDataParams = {
+    /** 场站 */
+    station: string;
+    /** 设备类型 */
+    deviceType: string;
+  };
+
+  type RealTimeDeviceDataListParams = {
+    page?: number;
+    pageSize?: number;
+    field?: string;
+    order?: 'ASC' | 'DESC';
+    /** 场站 */
+    station: string;
+    _t?: number;
+  };
+
+  type RealTimeDeviceDataUpdateParams = {
     id: number;
   };
 
@@ -1190,9 +1243,9 @@ declare namespace API {
     monthUsed?: number;
     /** 年代用气量(万方) */
     yearUsed?: number;
-    id?: number;
     createdAt?: string;
     updatedAt?: string;
+    id?: number;
   };
 
   type ResidueEntity = {
@@ -1355,9 +1408,9 @@ declare namespace API {
     state?: string;
     /** 排序 */
     orderNo: number;
-    id?: number;
     createdAt?: string;
     updatedAt?: string;
+    id?: number;
   };
 
   type RunAbnormalEntity = {
@@ -1483,9 +1536,9 @@ declare namespace API {
     state?: string;
     /** 排序 */
     orderNo: number;
-    id?: number;
     createdAt?: string;
     updatedAt?: string;
+    id?: number;
   };
 
   type StationRunAbnormalEntity = {
@@ -1532,9 +1585,9 @@ declare namespace API {
     yearSaleGasTotal?: number;
     /** 期末库存量 */
     inventory?: number;
-    id?: number;
     createdAt?: string;
     updatedAt?: string;
+    id?: number;
   };
 
   type StatisticsEntity = {
@@ -1953,9 +2006,9 @@ declare namespace API {
     meltGas?: number;
     /** 排序 */
     orderNo: number;
-    id?: number;
     createdAt?: string;
     updatedAt?: string;
+    id?: number;
   };
 
   type YinProtectionEntity = {

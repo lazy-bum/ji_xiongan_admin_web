@@ -18,6 +18,7 @@ import * as systemTask from './systemTask';
 import * as systemOnline from './systemOnline';
 import * as systemSse from './systemSse';
 import * as systemServe from './systemServe';
+import * as dataRealTimeDeviceData from './dataRealTimeDeviceData';
 import * as toolsStorage from './toolsStorage';
 import * as systemEmail from './systemEmail';
 import * as toolsUpload from './toolsUpload';
@@ -57,6 +58,7 @@ export default {
   systemOnline,
   systemSse,
   systemServe,
+  dataRealTimeDeviceData,
   toolsStorage,
   systemEmail,
   toolsUpload,

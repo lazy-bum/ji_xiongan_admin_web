@@ -138,6 +138,10 @@ const _permissions = [
   'data:station-run-abnormal:create',
   'data:station-run-abnormal:delete',
   'data:station-run-abnormal:update',
+  'data:real-time-device-data:list',
+  'data:real-time-device-data:create',
+  'data:real-time-device-data:delete',
+  'data:real-time-device-data:update',
 ] as const;
 
 export type PermissionType = (typeof _permissions)[number];
