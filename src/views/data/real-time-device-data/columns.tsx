@@ -19,14 +19,6 @@ export const baseColumns: TableColumnItem[] = [
     dataIndex: 'data',
   },
   {
-    title: '发送的数据',
-    dataIndex: 'send',
-  },
-  {
-    title: '接收的数据',
-    dataIndex: 'receive',
-  },
-  {
     title: '时间',
     dataIndex: 'createdAt',
     customRender: ({ record }) => formatToDateTime(record.createdAt),
