@@ -4,19 +4,19 @@ export const roleSchemas: FormSchema<API.CompletedAmountDto>[] = [
   {
     field: 'name',
     component: 'Input',
-    label: '月份',
+    label: '名称',
+    rules: [{ required: true, type: 'string' }],
+  },
+  {
+    field: 'deviceId',
+    component: 'Input',
+    label: '设备id',
     rules: [{ required: true, type: 'string' }],
   },
   {
     field: 'plan',
     component: 'InputNumber',
     label: '计划量',
-    rules: [{ type: 'number' }],
-  },
-  {
-    field: 'complete',
-    component: 'InputNumber',
-    label: '完成量',
     rules: [{ type: 'number' }],
   },
   {

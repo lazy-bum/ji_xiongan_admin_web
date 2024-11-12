@@ -121,8 +121,10 @@ declare namespace API {
   };
 
   type CompletedAmountDto = {
-    /** 月份 */
+    /** 名称 */
     name?: string;
+    /** 设备id */
+    deviceId?: string;
     /** 计划量 */
     plan?: number;
     /** 完成量 */
@@ -135,8 +137,10 @@ declare namespace API {
   };
 
   type CompletedAmountEntity = {
-    /** 月份 */
+    /** 名称 */
     name: string;
+    /** 设备id */
+    deviceId: string;
     /** 计划量 */
     plan: number;
     /** 完成量 */
@@ -554,6 +558,27 @@ declare namespace API {
     img: string;
     /** 验证码对应的唯一ID */
     id: string;
+  };
+
+  type InfluxdbDataDto = {
+    /** - */
+    result: string;
+    /** - */
+    table: number;
+    /** 开始查询时间 */
+    _start: string;
+    /** 结束查询时间 */
+    _stop: string;
+    /** 数据时间 */
+    _time: string;
+    /** 数据 */
+    _value: string | number;
+    /** 数据在那个key中 */
+    _field: string;
+    /** measurement */
+    _measurement: string;
+    /** 设备code */
+    device_id: string;
   };
 
   type KickDto = {
@@ -1145,36 +1170,19 @@ declare namespace API {
     id: number;
   };
 
-  type RealTimeDeviceDataDeleteParams = {
-    id: number;
-  };
-
-  type RealTimeDeviceDataDto = {
-    /** code */
-    code?: string;
-    /** data */
-    data?: string;
-    /** 发送数据 */
-    send?: string;
-    /** 接收数据 */
-    receive?: string;
-    createdAt?: string;
-    updatedAt?: string;
-    id?: string;
-  };
-
   type RealTimeDeviceDataEntity = {
     /** code */
     code: string;
     /** data */
     data: string;
-    /** 发送的数据 */
-    send: string;
-    /** 接收的数据 */
-    receive: string;
     id: string;
     createdAt: string;
     updatedAt: string;
+  };
+
+  type RealTimeDeviceDataFindDevicesOneDataParams = {
+    /** 设备编码 */
+    deviceIds: string[];
   };
 
   type RealTimeDeviceDataGet6HoursDataParams = {
@@ -1184,18 +1192,11 @@ declare namespace API {
     deviceType: string;
   };
 
-  type RealTimeDeviceDataListParams = {
-    page?: number;
-    pageSize?: number;
-    field?: string;
-    order?: 'ASC' | 'DESC';
+  type RealTimeDeviceDataListNoPageParams = {
     /** 场站 */
     station: string;
-    _t?: number;
-  };
-
-  type RealTimeDeviceDataUpdateParams = {
-    id: number;
+    /** 设备 */
+    device: string;
   };
 
   type RefreshTokenEntity = {

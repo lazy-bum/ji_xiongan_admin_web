@@ -2,7 +2,7 @@
   <DynamicTable
     row-key="id"
     header-title="设备实时数据"
-    :data-request="Api.dataRealTimeDeviceData.realTimeDeviceDataList"
+    :data-request="Api.dataRealTimeDeviceData.realTimeDeviceDataListNoPage"
     :columns="columns"
     bordered
     size="small"

@@ -7,51 +7,18 @@
 
 import { request, type RequestOptions } from '@/utils/request';
 
-/** 更新 PUT /api/data/real-time-device-data/${param0} */
-export async function realTimeDeviceDataUpdate(
+/** 获取多个设备的最新一条数据 GET /api/data/real-time-device-data/findDevicesOneData */
+export async function realTimeDeviceDataFindDevicesOneData(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.RealTimeDeviceDataUpdateParams,
-  body: API.RealTimeDeviceDataDto,
+  params: API.RealTimeDeviceDataFindDevicesOneDataParams,
   options?: RequestOptions,
 ) {
-  const { id: param0, ...queryParams } = params;
-  return request<any>(`/api/data/real-time-device-data/${param0}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
+  return request<API.InfluxdbDataDto[]>('/api/data/real-time-device-data/findDevicesOneData', {
+    method: 'GET',
+    params: {
+      ...params,
     },
-    params: { ...queryParams },
-    data: body,
-    ...(options || { successMsg: '更新成功' }),
-  });
-}
-
-/** 删除 DELETE /api/data/real-time-device-data/${param0} */
-export async function realTimeDeviceDataDelete(
-  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.RealTimeDeviceDataDeleteParams,
-  options?: RequestOptions,
-) {
-  const { id: param0, ...queryParams } = params;
-  return request<any>(`/api/data/real-time-device-data/${param0}`, {
-    method: 'DELETE',
-    params: { ...queryParams },
-    ...(options || { successMsg: '删除成功' }),
-  });
-}
-
-/** 创建 POST /api/data/real-time-device-data/create */
-export async function realTimeDeviceDataCreate(
-  body: API.RealTimeDeviceDataDto,
-  options?: RequestOptions,
-) {
-  return request<any>('/api/data/real-time-device-data/create', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: body,
-    ...(options || { successMsg: '创建成功' }),
+    ...(options || {}),
   });
 }
 
@@ -69,7 +36,7 @@ export async function realTimeDeviceDataGet6HoursData(
   params: API.RealTimeDeviceDataGet6HoursDataParams,
   options?: RequestOptions,
 ) {
-  return request<any>('/api/data/real-time-device-data/get6HoursData', {
+  return request<Record<string, any>[]>('/api/data/real-time-device-data/get6HoursData', {
     method: 'GET',
     params: {
       ...params,
@@ -78,13 +45,13 @@ export async function realTimeDeviceDataGet6HoursData(
   });
 }
 
-/** 获取列表 GET /api/data/real-time-device-data/list */
-export async function realTimeDeviceDataList(
+/** 获取列表无分页 GET /api/data/real-time-device-data/listNoPage */
+export async function realTimeDeviceDataListNoPage(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.RealTimeDeviceDataListParams,
+  params: API.RealTimeDeviceDataListNoPageParams,
   options?: RequestOptions,
 ) {
-  return request<API.RealTimeDeviceDataEntity[]>('/api/data/real-time-device-data/list', {
+  return request<API.RealTimeDeviceDataEntity[]>('/api/data/real-time-device-data/listNoPage', {
     method: 'GET',
     params: {
       ...params,

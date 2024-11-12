@@ -5,8 +5,13 @@ export type TableColumnItem = TableColumn<TableListItem>;
 
 export const baseColumns: TableColumnItem[] = [
   {
-    title: '月份',
+    title: '名称',
     dataIndex: 'name',
+    hideInSearch: true,
+  },
+  {
+    title: '设备id',
+    dataIndex: 'deviceId',
     hideInSearch: true,
   },
   {
