@@ -2,12 +2,14 @@
  * Multi-language related operations
  */
 import { unref, computed } from 'vue';
+import dayjs from 'dayjs';
 import { loadLocalePool, setHtmlPageLang } from './helper';
 import { i18n } from './';
 import type { LocaleType } from './config';
 import type { Locale } from 'ant-design-vue/es/locale-provider';
 
 import { useLocaleStoreWithOut } from '@/store/modules/locale';
+import 'dayjs/locale/zh-cn';
 
 interface LangModule {
   message: Recordable;
@@ -46,6 +48,7 @@ export function useLocale() {
 
     if (loadLocalePool.includes(locale)) {
       setI18nLanguage(locale);
+      dayjs.locale(locale);
       return locale;
     }
     const langModule = ((await import(`./lang/${locale}.ts`)) as any).default as LangModule;
@@ -57,6 +60,7 @@ export function useLocale() {
     loadLocalePool.push(locale);
 
     setI18nLanguage(locale);
+    dayjs.locale(locale);
     return locale;
   }
 
