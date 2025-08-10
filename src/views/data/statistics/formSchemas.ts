@@ -9,26 +9,19 @@ export const roleSchemas: FormSchema<API.StatisticsDto>[] = [
   },
   {
     field: 'runTime',
-    component: 'InputNumber',
+    component: 'DatePicker',
     label: '安全运行时常',
-    rules: [{ type: 'number' }],
-  },
-  {
-    field: 'energyConsumption',
-    component: 'InputNumber',
-    label: '总能耗',
-    rules: [{ type: 'number' }],
+    componentProps: {
+      style: {
+        width: '100%',
+      },
+      valueFormat: 'YYYY-MM-DD',
+    },
   },
   {
     field: 'yearPurchaseGasTotal',
     component: 'InputNumber',
     label: '年购气量',
-    rules: [{ type: 'number' }],
-  },
-  {
-    field: 'yearConsumeGasTotal',
-    component: 'InputNumber',
-    label: '年耗气量',
     rules: [{ type: 'number' }],
   },
   {

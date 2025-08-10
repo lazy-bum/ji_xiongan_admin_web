@@ -13,16 +13,8 @@ export const baseColumns: TableColumnItem[] = [
     dataIndex: 'runTime',
   },
   {
-    title: '总能耗',
-    dataIndex: 'energyConsumption',
-  },
-  {
     title: '年购气量',
     dataIndex: 'yearPurchaseGasTotal',
-  },
-  {
-    title: '年耗气量',
-    dataIndex: 'yearConsumeGasTotal',
   },
   {
     title: '年销气量',

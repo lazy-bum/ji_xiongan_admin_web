@@ -1192,6 +1192,18 @@ declare namespace API {
     deviceType: string;
   };
 
+  type RealTimeDeviceDataGetIncrementDataParams = {
+    /** 设备编码 */
+    deviceIds: string[];
+  };
+
+  type RealTimeDeviceDataGetStationNewDataParams = {
+    /** 场站 */
+    station: string;
+    /** 设备类型 */
+    deviceType: string;
+  };
+
   type RealTimeDeviceDataListNoPageParams = {
     /** 场站 */
     station: string;
@@ -1575,13 +1587,9 @@ declare namespace API {
     /** 场站 */
     station?: string;
     /** 安全运行时常 */
-    runTime?: number;
-    /** 总能耗 */
-    energyConsumption?: number;
+    runTime?: string;
     /** 年购气量 */
     yearPurchaseGasTotal?: number;
-    /** 年耗气量 */
-    yearConsumeGasTotal?: number;
     /** 年销气量 */
     yearSaleGasTotal?: number;
     /** 期末库存量 */
@@ -1595,13 +1603,9 @@ declare namespace API {
     /** 场站 */
     station: string;
     /** 安全运行时常 */
-    runTime: number;
-    /** 总能耗 */
-    energyConsumption: number;
+    runTime: string;
     /** 年购气量 */
     yearPurchaseGasTotal: number;
-    /** 年耗气量 */
-    yearConsumeGasTotal: number;
     /** 年销气量 */
     yearSaleGasTotal: number;
     /** 期末库存量 */
