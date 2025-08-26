@@ -142,6 +142,10 @@ const _permissions = [
   'data:real-time-device-data:create',
   'data:real-time-device-data:delete',
   'data:real-time-device-data:update',
+  'data:table-header-manage:list',
+  'data:table-header-manage:create',
+  'data:table-header-manage:delete',
+  'data:table-header-manage:update',
 ] as const;
 
 export type PermissionType = (typeof _permissions)[number];

@@ -6,3 +6,4 @@ export * from './src/schema-form';
 export * from './src/schema-form-item';
 export * from './src/hooks/';
 export * from './src/components/';
+export * from './src/componentMap';

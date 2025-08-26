@@ -160,6 +160,8 @@ declare namespace API {
     pageSize?: number;
     field?: string;
     order?: 'ASC' | 'DESC';
+    /** 场站 */
+    station?: string;
     _t?: number;
   };
 
@@ -1248,36 +1250,16 @@ declare namespace API {
   };
 
   type ResidueDto = {
-    /** 名称 */
-    name?: string;
-    /** 余额(万元) */
-    balance?: number;
-    /** 月代输量(万方) */
-    monthInput?: number;
-    /** 年代输量(万方) */
-    yearInput?: number;
-    /** 月代用气量(万方) */
-    monthUsed?: number;
-    /** 年代用气量(万方) */
-    yearUsed?: number;
+    /** 数据 */
+    data?: Record<string, any>;
     createdAt?: string;
     updatedAt?: string;
     id?: number;
   };
 
   type ResidueEntity = {
-    /** 名称 */
-    name: string;
-    /** 余额(万元) */
-    balance: number;
-    /** 月代输量(万方) */
-    monthInput: number;
-    /** 年代输量(万方) */
-    yearInput: number;
-    /** 月代用气量(万方) */
-    monthUsed: number;
-    /** 年代用气量(万方) */
-    yearUsed: number;
+    /** 数据 */
+    data: Record<string, any>;
     id: number;
     createdAt: string;
     updatedAt: string;
@@ -1288,8 +1270,6 @@ declare namespace API {
     pageSize?: number;
     field?: string;
     order?: 'ASC' | 'DESC';
-    /** 场站名称 */
-    name?: string;
     _t?: number;
   };
 
@@ -1678,6 +1658,71 @@ declare namespace API {
   };
 
   type String = {};
+
+  type TableHeaderManageDeleteParams = {
+    id: number;
+  };
+
+  type TableHeaderManageDto = {
+    /** 模块 */
+    module?: string;
+    /** 展示名称 */
+    name?: string;
+    /** 单位 */
+    unit?: string;
+    /** 字段名 */
+    field?: string;
+    /** 表单类型 */
+    formType?: string;
+    /** 表单配置 */
+    formOption?: string;
+    /** 是否显示 0不显示 1-显示 */
+    show?: number;
+    /** 是否显示 0非必填 1-必填 */
+    required?: number;
+    /** 排序 */
+    orderNo: number;
+    createdAt?: string;
+    updatedAt?: string;
+    id?: number;
+  };
+
+  type TableHeaderManageEntity = {
+    /** 模块名称 */
+    module: string;
+    /** 展示名称 */
+    name: string;
+    /** 单位 */
+    unit: string;
+    /** 字段名 */
+    field: string;
+    /** 表单类型 */
+    formType: string;
+    /** 表单配置 */
+    formOption: string;
+    /** 是否显示 0不显示 1-显示 */
+    show: number;
+    /** 是否必填 0非必填 1-必填 */
+    required: number;
+    orderNo: number;
+    id: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+
+  type TableHeaderManageListParams = {
+    page?: number;
+    pageSize?: number;
+    field?: string;
+    order?: 'ASC' | 'DESC';
+    /** 模块 */
+    module?: string;
+    _t?: number;
+  };
+
+  type TableHeaderManageUpdateParams = {
+    id: number;
+  };
 
   type TaskDeleteParams = {
     id: number;

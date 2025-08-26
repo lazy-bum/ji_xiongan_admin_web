@@ -7,15 +7,15 @@
 
 import { request, type RequestOptions } from '@/utils/request';
 
-/** 更新 PUT /api/data/residue/${param0} */
-export async function residueUpdate(
+/** 更新 PUT /api/data/table-header-manage/${param0} */
+export async function tableHeaderManageUpdate(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.ResidueUpdateParams,
-  body: API.ResidueDto,
+  params: API.TableHeaderManageUpdateParams,
+  body: API.TableHeaderManageDto,
   options?: RequestOptions,
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<any>(`/api/data/residue/${param0}`, {
+  return request<any>(`/api/data/table-header-manage/${param0}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -26,23 +26,26 @@ export async function residueUpdate(
   });
 }
 
-/** 删除 DELETE /api/data/residue/${param0} */
-export async function residueDelete(
+/** 删除 DELETE /api/data/table-header-manage/${param0} */
+export async function tableHeaderManageDelete(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.ResidueDeleteParams,
+  params: API.TableHeaderManageDeleteParams,
   options?: RequestOptions,
 ) {
   const { id: param0, ...queryParams } = params;
-  return request<any>(`/api/data/residue/${param0}`, {
+  return request<any>(`/api/data/table-header-manage/${param0}`, {
     method: 'DELETE',
     params: { ...queryParams },
     ...(options || { successMsg: '删除成功' }),
   });
 }
 
-/** 创建 POST /api/data/residue/create */
-export async function residueCreate(body: API.ResidueDto, options?: RequestOptions) {
-  return request<any>('/api/data/residue/create', {
+/** 创建 POST /api/data/table-header-manage/create */
+export async function tableHeaderManageCreate(
+  body: API.TableHeaderManageDto,
+  options?: RequestOptions,
+) {
+  return request<any>('/api/data/table-header-manage/create', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -52,14 +55,14 @@ export async function residueCreate(body: API.ResidueDto, options?: RequestOptio
   });
 }
 
-/** 获取完成量列表 GET /api/data/residue/list */
-export async function residueList(
+/** 列表 GET /api/data/table-header-manage/list */
+export async function tableHeaderManageList(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.ResidueListParams,
+  params: API.TableHeaderManageListParams,
   options?: RequestOptions,
 ) {
   return request<{
-    items?: API.ResidueEntity[];
+    items?: API.TableHeaderManageEntity[];
     meta?: {
       itemCount?: number;
       totalItems?: number;
@@ -67,7 +70,7 @@ export async function residueList(
       totalPages?: number;
       currentPage?: number;
     };
-  }>('/api/data/residue/list', {
+  }>('/api/data/table-header-manage/list', {
     method: 'GET',
     params: {
       ...params,

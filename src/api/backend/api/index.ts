@@ -40,6 +40,7 @@ import * as dataCockpitYinProtection from './dataCockpitYinProtection';
 import * as dataResidue from './dataResidue';
 import * as dataPipelineRunAbnormal from './dataPipelineRunAbnormal';
 import * as dataStationRunAbnormal from './dataStationRunAbnormal';
+import * as dataTableHeaderManage from './dataTableHeaderManage';
 import * as test from './test';
 import * as businessTodo from './businessTodo';
 export default {
@@ -81,6 +82,7 @@ export default {
   dataResidue,
   dataPipelineRunAbnormal,
   dataStationRunAbnormal,
+  dataTableHeaderManage,
   test,
   businessTodo,
 };
