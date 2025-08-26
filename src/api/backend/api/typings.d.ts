@@ -121,6 +121,8 @@ declare namespace API {
   };
 
   type CompletedAmountDto = {
+    /** 场站 */
+    station?: string;
     /** 名称 */
     name?: string;
     /** 设备id */
@@ -137,6 +139,8 @@ declare namespace API {
   };
 
   type CompletedAmountEntity = {
+    /** 场站名称 */
+    station: string;
     /** 名称 */
     name: string;
     /** 设备id */

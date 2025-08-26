@@ -51,7 +51,7 @@
         },
       },
       formProps: {
-        labelWidth: 100,
+        labelWidth: 120,
         schemas: roleSchemas,
       },
     });

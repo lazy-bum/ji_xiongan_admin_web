@@ -8,6 +8,11 @@
     size="small"
     show-index
   >
+    <template #bodyCell="{ column, record }">
+      <template v-if="column.dataIndex === 'station'">
+        {{ stationList.find((n) => n.value === record[column.dataIndex])?.label }}
+      </template>
+    </template>
     <template #toolbar>
       <a-button
         type="primary"
@@ -21,7 +26,13 @@
 </template>
 
 <script lang="ts" setup>
-  import { baseColumns, type TableListItem, type TableColumnItem } from './columns';
+  import { onBeforeMount, ref } from 'vue';
+  import {
+    baseColumns,
+    type TableListItem,
+    type TableColumnItem,
+    searchFormSchemas,
+  } from './columns';
   import { roleSchemas } from './formSchemas';
   import { useTable } from '@/components/core/dynamic-table';
   import { useFormModal } from '@/hooks/useModal/';
@@ -30,10 +41,30 @@
   defineOptions({
     name: 'DataCompletedAmount',
   });
+  const stationList = ref<LabelValueOptions>([]);
 
-  const [DynamicTable, dynamicTableInstance] = useTable();
+  const [DynamicTable, dynamicTableInstance] = useTable({
+    formProps: {
+      schemas: searchFormSchemas,
+    },
+  });
 
   const [showModal] = useFormModal();
+
+  onBeforeMount(async () => {
+    const data = await Api.systemDictItem.dictItemFindListByCode({ code: 'data_station' });
+    stationList.value = data.map((n) => ({ label: n.label, value: n.value }));
+
+    // 动态更新搜索表单项
+    dynamicTableInstance?.getSearchFormRef()?.updateSchema?.([
+      {
+        field: 'station',
+        componentProps: {
+          options: stationList.value,
+        },
+      },
+    ]);
+  });
 
   /**
    * @description 打开新增/编辑弹窗
@@ -59,6 +90,15 @@
         schemas: roleSchemas,
       },
     });
+
+    formRef?.updateSchema?.([
+      {
+        field: 'station',
+        componentProps: {
+          options: stationList.value,
+        },
+      },
+    ]);
 
     if (record.id) {
       formRef?.setFieldsValue({

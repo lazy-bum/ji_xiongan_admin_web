@@ -2,6 +2,12 @@ import type { FormSchema } from '@/components/core/schema-form';
 
 export const roleSchemas: FormSchema<API.CompletedAmountDto>[] = [
   {
+    field: 'station',
+    component: 'Select',
+    label: '关联场站',
+    rules: [{ required: true, type: 'string' }],
+  },
+  {
     field: 'name',
     component: 'Input',
     label: '名称',
