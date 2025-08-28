@@ -2,12 +2,12 @@
   <div class="login-box">
     <div class="login-logo">
       <!-- <svg-icon name="logo" :size="45" /> -->
-      <img src="~@/assets/images/logo.png" width="45" />
-      <h1 class="mb-0 ml-2 text-3xl font-bold">Antdv Admin</h1>
+      <!-- <img src="~@/assets/images/logo.png" width="45" /> -->
+      <h1 class="mb-0 ml-2 text-3xl font-bold">Admin</h1>
     </div>
     <a-form layout="horizontal" :model="loginFormModel" @submit.prevent="handleSubmit">
       <a-form-item>
-        <a-input v-model:value="loginFormModel.username" size="large" placeholder="admin">
+        <a-input v-model:value="loginFormModel.username" size="large" placeholder="账号">
           <template #prefix> <Icon icon="ant-design:user-outlined" /> </template>
         </a-input>
       </a-form-item>
@@ -16,7 +16,7 @@
           v-model:value="loginFormModel.password"
           size="large"
           type="password"
-          placeholder="a123456"
+          placeholder="密码"
           autocomplete="new-password"
         >
           <template #prefix> <Icon icon="ant-design:lock-outlined" /></template>

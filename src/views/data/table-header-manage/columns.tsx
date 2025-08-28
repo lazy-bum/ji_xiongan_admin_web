@@ -6,10 +6,6 @@ export type TableColumnItem = TableColumn<TableListItem>;
 
 export const baseColumns: TableColumnItem[] = [
   {
-    title: '模块',
-    dataIndex: 'module',
-  },
-  {
     title: '展示名称',
     dataIndex: 'name',
   },

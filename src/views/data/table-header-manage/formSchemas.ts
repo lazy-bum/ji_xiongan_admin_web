@@ -23,6 +23,7 @@ export const roleSchemas: FormSchema<API.TableHeaderManageEntity>[] = [
     component: 'Input',
     label: '字段名',
     rules: [{ required: true }],
+    dynamicDisabled: true,
   },
   {
     field: 'formType',
@@ -48,6 +49,7 @@ export const roleSchemas: FormSchema<API.TableHeaderManageEntity>[] = [
             JSON.parse(`${value}`);
             return Promise.resolve();
           } catch (error) {
+            console.error(error);
             return Promise.reject('JSON格式不正确');
           }
         },

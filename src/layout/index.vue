@@ -9,7 +9,7 @@
       :theme="getTheme"
       class="layout-sider"
     >
-      <Logo :collapsed="collapsed" />
+      <!-- <Logo :collapsed="collapsed" /> -->
       <AsideMenu :collapsed="collapsed" :theme="getTheme" />
     </Layout.Sider>
     <Layout>

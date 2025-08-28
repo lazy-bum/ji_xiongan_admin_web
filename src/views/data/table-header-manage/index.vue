@@ -34,6 +34,7 @@
 
 <script lang="ts" setup>
   import { onBeforeMount, ref } from 'vue';
+  import { isEmpty } from 'lodash-es';
   import {
     baseColumns,
     type TableListItem,
@@ -58,7 +59,7 @@
   });
 
   onBeforeMount(async () => {
-    const data = await Api.systemDictItem.dictItemFindListByCode({ code: 'modules' });
+    const data = await Api.systemDictItem.dictItemFindListByCode({ code: 'data_modules' });
     modulesList.value = data.map((n) => ({ label: n.label, value: n.value }));
 
     // 动态更新搜索表单项
@@ -106,9 +107,12 @@
 
     const searchForm = dynamicTableInstance?.getSearchFormRef()?.getFieldsValue() || {};
 
-    formRef?.setFieldsValue({
-      module: searchForm.module ?? '',
-    });
+    if (isEmpty(record.id)) {
+      formRef?.setFieldsValue({
+        module: searchForm.module ?? '',
+        field: `module_${new Date().getTime().toString()}`,
+      });
+    }
 
     formRef?.updateSchema?.([
       {
