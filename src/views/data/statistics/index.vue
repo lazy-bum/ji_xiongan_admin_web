@@ -1,7 +1,7 @@
 <template>
   <DynamicTable
     row-key="id"
-    header-title="完成量"
+    header-title="总指标"
     :data-request="Api.dataStatistics.statisticsList"
     :columns="columns"
     :search="false"

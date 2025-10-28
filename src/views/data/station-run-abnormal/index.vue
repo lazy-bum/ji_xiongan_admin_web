@@ -2,12 +2,12 @@
   <DynamicTable
     row-key="id"
     header-title="场站运行异常"
-    :search-form="{ schemas: searchFormSchemas }"
     :data-request="Api.dataStationRunAbnormal.stationRunAbnormalList"
     :columns="columns"
     bordered
     size="small"
     show-index
+    :search="false"
   >
     <template #bodyCell="{ column, record }">
       <template v-if="column.dataIndex === 'state'">

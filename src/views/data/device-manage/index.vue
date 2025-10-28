@@ -1,7 +1,7 @@
 <template>
   <DynamicTable
     row-key="id"
-    header-title="完成量"
+    header-title="设备管理"
     :data-request="Api.dataDeviceManage.deviceManageList"
     :columns="columns"
     bordered

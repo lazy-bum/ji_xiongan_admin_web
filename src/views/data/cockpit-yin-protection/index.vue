@@ -1,7 +1,7 @@
 <template>
   <DynamicTable
     row-key="id"
-    header-title="驾驶舱-智能阴保"
+    header-title="智能阴保(驾驶舱)"
     :data-request="Api.dataCockpitYinProtection.cockpitYinProtectionList"
     :columns="columns"
     bordered

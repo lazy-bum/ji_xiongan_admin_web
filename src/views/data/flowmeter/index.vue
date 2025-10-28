@@ -1,7 +1,7 @@
 <template>
   <DynamicTable
     row-key="id"
-    header-title="管道管理"
+    header-title="流量计对比"
     :data-request="Api.dataFlowmeter.flowmeterList"
     :columns="columns"
     bordered

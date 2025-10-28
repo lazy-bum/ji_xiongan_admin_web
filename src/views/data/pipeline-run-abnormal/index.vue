@@ -5,6 +5,7 @@
     :data-request="Api.dataPipelineRunAbnormal.pipelineRunAbnormalList"
     :columns="columns"
     bordered
+    :search="false"
     size="small"
     show-index
   >
