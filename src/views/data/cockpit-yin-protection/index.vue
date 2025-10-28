@@ -7,6 +7,7 @@
     bordered
     size="small"
     show-index
+    :search="false"
   >
     <template #toolbar>
       <a-button
