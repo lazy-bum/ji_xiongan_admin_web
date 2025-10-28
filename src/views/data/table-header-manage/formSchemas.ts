@@ -24,20 +24,24 @@ export const roleSchemas: FormSchema<API.TableHeaderManageEntity>[] = [
     label: '字段名',
     rules: [{ required: true }],
     dynamicDisabled: true,
+    vShow: false,
   },
   {
     field: 'formType',
     component: 'Select',
     label: '表单类型',
     rules: [{ required: true }],
+    defaultValue: 'Input',
     componentProps: {
       options: Object.keys(componentMap).map((item) => ({ label: item, value: item })),
     },
+    vShow: false,
   },
   {
     field: 'formOption',
     component: 'InputTextArea',
     label: '表单配置',
+    vShow: false,
     rules: [
       {
         validator: async (_, value) => {

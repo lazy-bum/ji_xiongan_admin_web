@@ -14,10 +14,6 @@ export const baseColumns: TableColumnItem[] = [
     dataIndex: 'unit',
   },
   {
-    title: '字段名',
-    dataIndex: 'field',
-  },
-  {
     title: '是否显示',
     dataIndex: 'show',
   },
